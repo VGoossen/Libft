@@ -6,13 +6,13 @@
 /*   By: vgoossen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 12:22:38 by vgoossen          #+#    #+#             */
-/*   Updated: 2023/10/17 13:33:24 by vgoossen         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:11:39 by vgoossen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char *s;
 	char *d;
@@ -22,13 +22,13 @@ void	*memmove(void *dest, const void *src, size_t n)
 	d = (char *)dest;
 	i = 0;
 
-	if (d = s)
+	if (d == s)
 		return (dest);
 	if (d > s)
-		while (len-- > 0)
-			d[len] = s[len];
+		while (n-- > 0)
+			d[n] = s[n];
 	else
-		while (i < len)
+		while (i < n)
 		{
 			d[i] = s[i];
 			i++;
