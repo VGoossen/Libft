@@ -6,7 +6,7 @@
 /*   By: vgoossen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:36:21 by vgoossen          #+#    #+#             */
-/*   Updated: 2023/10/23 11:37:37 by vgoossen         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:02:54 by vgoossen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	n;
+
 	if (*little == 0)
 		return ((char *)big);
 	n = ft_strlen(little);

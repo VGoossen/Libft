@@ -6,7 +6,7 @@
 /*   By: vgoossen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:05:28 by vgoossen          #+#    #+#             */
-/*   Updated: 2023/10/23 14:52:40 by vgoossen         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:03:27 by vgoossen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!sub)
 		return (NULL);
 	ft_strlcpy(sub, s + start, len + 1);
-	return(sub);
+	return (sub);
 }

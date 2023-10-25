@@ -6,7 +6,7 @@
 /*   By: vgoossen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:07:36 by vgoossen          #+#    #+#             */
-/*   Updated: 2023/10/24 12:43:10 by vgoossen         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:58:33 by vgoossen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,5 @@ char	**ft_split(const char *s, char c)
 	if (!new)
 		return (NULL);
 	ft_sepstring(new, s, c);
-	return(new);
+	return (new);
 }

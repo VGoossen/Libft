@@ -6,7 +6,7 @@
 /*   By: vgoossen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:59:44 by vgoossen          #+#    #+#             */
-/*   Updated: 2023/10/19 15:54:27 by vgoossen         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:27:40 by vgoossen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 

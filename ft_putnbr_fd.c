@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoossen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 12:39:18 by vgoossen          #+#    #+#             */
-/*   Updated: 2023/10/25 14:55:33 by vgoossen         ###   ########.fr       */
+/*   Created: 2023/10/25 15:44:09 by vgoossen          #+#    #+#             */
+/*   Updated: 2023/10/25 15:55:20 by vgoossen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s2;
-
-	s2 = (char *)malloc(ft_strlen(s) + 1);
-	if (!s2)
-		return (0);
-	ft_memcpy(s2, s, ft_strlen(s) + 1);
-	return (s2);
+	if (n < 0)
+	{
+		if (n == -2147483648)
+		{
+			ft_putstr_fd("-2147483648", fd);
+			return ;
+		}
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n / 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd('0' + n, fd);
 }

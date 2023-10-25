@@ -6,7 +6,7 @@
 /*   By: vgoossen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:54:49 by vgoossen          #+#    #+#             */
-/*   Updated: 2023/10/19 13:12:20 by vgoossen         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:00:20 by vgoossen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ void	*ft_memset(void *b, int c, size_t len)
 		start++;
 		len--;
 	}
-	return(b);
+	return (b);
 }
-

@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoossen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 11:40:17 by vgoossen          #+#    #+#             */
-/*   Updated: 2023/10/25 14:32:15 by vgoossen         ###   ########.fr       */
+/*   Created: 2023/10/25 14:10:04 by vgoossen          #+#    #+#             */
+/*   Updated: 2023/10/25 14:19:04 by vgoossen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c == ' ' || c == '\n' || c == '\t'
-		|| c == '\v' || c == '\f' || c == '\r')
-		return (1);
-	return (0);
-}
-
-int	ft_atoi(const char *nptr)
-{
-	long	nbr;
-	long	sign;
+	char	*new;
+	size_t	len;
 	size_t	i;
 
-	nbr = 0;
-	sign = 1;
 	i = 0;
-	while (nptr[i] && ft_isspace(nptr[i]) == 1)
-		i++;
-	if (nptr[i] == '-')
-		sign = -1;
-	if (nptr[i] == '-' || nptr[i] == '+')
-		i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	if (!s)
+		return (ft_strdup(""));
+	len = ft_strlen(s);
+	new = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new)
+		return (NULL);
+	while (i < len)
 	{
-		nbr = nbr * 10 + (nptr[i] - '0');
+		new[i] = (*f)(i, s[i]);
 		i++;
 	}
-	return (nbr * sign);
+	new[i] = '\0';
+	return (new);
 }
