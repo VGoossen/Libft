@@ -35,6 +35,12 @@ SRCS			=	ft_bzero.c	\
 
 OBJS			= $(SRCS:.c=.o)
 
+BONUS			=	ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c
+
+BONUS_OBJS		= $(BONUS:.c=.o)
 CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
@@ -54,5 +60,7 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:			all clean fclean re
